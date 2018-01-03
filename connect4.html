@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Connect Four</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="connect4.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous">
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div id="top-area">
+            <h1>Welcome to Connect Four!</h1>
+            <h2>The object of this game is to connect four of your chips in a row!</h2>
+            <h3 id="feedback"></h3>
+            <button id="btn" class="btn btn-success btn-block">Let's get started!</button>
+        </div>
+        <div id="play-area">
+            <table align="center">
+                <tr>
+                    <td id="row-1-col-1"><div class="circle row-1 col-1"></div></td>
+                    <td id="row-1-col-2"><div class="circle row-1 col-2"></div></td>
+                    <td id="row-1-col-3"><div class="circle row-1 col-3"></div></td>
+                    <td id="row-1-col-4"><div class="circle row-1 col-4"></div></td>
+                    <td id="row-1-col-5"><div class="circle row-1 col-5"></div></td>
+                    <td id="row-1-col-6"><div class="circle row-1 col-6"></div></td>
+                    <td id="row-1-col-7"><div class="circle row-1 col-7"></div></td>
+                </tr>
+                <tr>
+                    <td id="row-2-col-1"><div class="circle row-2 col-1"></div></td>
+                    <td id="row-2-col-2"><div class="circle row-2 col-2"></div></td>
+                    <td id="row-2-col-3"><div class="circle row-2 col-3"></div></td>
+                    <td id="row-2-col-4"><div class="circle row-2 col-4"></div></td>
+                    <td id="row-2-col-5"><div class="circle row-2 col-5"></div></td>
+                    <td id="row-2-col-6"><div class="circle row-2 col-6"></div></td>
+                    <td id="row-2-col-7"><div class="circle row-2 col-7"></div></td>
+                </tr>
+                <tr>
+                    <td id="row-3-col-1"><div class="circle row-3 col-1"></div></td>
+                    <td id="row-3-col-2"><div class="circle row-3 col-2"></div></td>
+                    <td id="row-3-col-3"><div class="circle row-3 col-3"></div></td>
+                    <td id="row-3-col-4"><div class="circle row-3 col-4"></div></td>
+                    <td id="row-3-col-5"><div class="circle row-3 col-5"></div></td>
+                    <td id="row-3-col-6"><div class="circle row-3 col-6"></div></td>
+                    <td id="row-3-col-7"><div class="circle row-3 col-7"></div></td>
+                </tr>
+                <tr>
+                    <td id="row-4-col-1"><div class="circle row-4 col-1"></div></td>
+                    <td id="row-4-col-2"><div class="circle row-4 col-2"></div></td>
+                    <td id="row-4-col-3"><div class="circle row-4 col-3"></div></td>
+                    <td id="row-4-col-4"><div class="circle row-4 col-4"></div></td>
+                    <td id="row-4-col-5"><div class="circle row-4 col-5"></div></td>
+                    <td id="row-4-col-6"><div class="circle row-4 col-6"></div></td>
+                    <td id="row-4-col-7"><div class="circle row-4 col-7"></div></td>
+                </tr>
+                <tr>
+                    <td id="row-5-col-1"><div class="circle row-5 col-1"></div></td>
+                    <td id="row-5-col-2"><div class="circle row-5 col-2"></div></td>
+                    <td id="row-5-col-3"><div class="circle row-5 col-3"></div></td>
+                    <td id="row-5-col-4"><div class="circle row-5 col-4"></div></td>
+                    <td id="row-5-col-5"><div class="circle row-5 col-5"></div></td>
+                    <td id="row-5-col-6"><div class="circle row-5 col-6"></div></td>
+                    <td id="row-5-col-7"><div class="circle row-5 col-7"></div></td>
+                </tr>
+                <tr>
+                    <td id="row-6-col-1"><div class="circle row-6 col-1"></div></td>
+                    <td id="row-6-col-2"><div class="circle row-6 col-2"></div></td>
+                    <td id="row-6-col-3"><div class="circle row-6 col-3"></div></td>
+                    <td id="row-6-col-4"><div class="circle row-6 col-4"></div></td>
+                    <td id="row-6-col-5"><div class="circle row-6 col-5"></div></td>
+                    <td id="row-6-col-6"><div class="circle row-6 col-6"></div></td>
+                    <td id="row-6-col-7"><div class="circle row-6 col-7"></div></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script src="connect4.js"></script>   
+</body>
+</html>

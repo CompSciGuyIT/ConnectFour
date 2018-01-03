@@ -1,0 +1,61 @@
+#top-area {
+    text-align: center;
+    height: 250px;
+    position: relative; /* needed for absolute position of button to work */
+}
+
+#btn {
+    font-size: 30px;
+    position: absolute; /* pushes button to bottom of div */
+    bottom: 0;
+}
+
+#play-area {
+    margin: 20px auto 0 auto;
+    height: 650px;
+    width: 800px;
+}
+
+table {
+    margin-top: 20px;
+    border: 5px solid black;
+}
+
+td {
+    height: 100px;
+    width: 100px;
+    border: 2px solid black;
+    background: grey;
+}
+
+.circle {
+    width: 90px;
+    height: 90px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    background: white;
+    margin: auto;
+  }
+
+.circle-red {
+    width: 90px;
+    height: 90px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: 2px solid black;
+    background: red;
+    margin: auto;
+}
+
+.circle-blue {
+    width: 90px;
+    height: 90px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: 2px solid black;
+    background: blue;
+    margin: auto;
+}
