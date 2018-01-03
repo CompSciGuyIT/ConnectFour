@@ -64,34 +64,34 @@ function unchange_column_colour() {
 }
 
 /* Check if top row in column is empty */
-function check_top_empty(space) {
-    switch (space) {
-        case col_1:
-            if ($('#row-1-col-1').child().hasClass('circle')) return true;
+function check_top_empty(space_id) {
+    switch (space_id) {
+        case 'row-1-col-1':
+            if ($('#row-1-col-1 div').hasClass('circle')) return true;
             return false;
     
-        case col_2:
-            if ($('#row-1-col-2').child().hasClass('circle')) return true;
+        case 'row-1-col-2':
+            if ($('#row-1-col-2 div').hasClass('circle')) return true;
             return false;
 
-        case col_3:
-            if ($('#row-1-col-3').child().hasClass('circle')) return true;
+        case 'row-1-col-3':
+            if ($('#row-1-col-3 div').hasClass('circle')) return true;
             return false;
 
-        case col_4:
-            if ($('#row-1-col-4').child().hasClass('circle')) return true;
+        case 'row-1-col-4':
+            if ($('#row-1-col-4 div').hasClass('circle')) return true;
             return false;
 
-        case col_5:
-            if ($('#row-1-col-5').child().hasClass('circle')) return true;
+        case 'row-1-col-5':
+            if ($('#row-1-col-5 div').hasClass('circle')) return true;
             return false;
 
-        case col_6:
-            if ($('#row-1-col-6').child().hasClass('circle')) return true;
+        case 'row-1-col-6':
+            if ($('#row-1-col-6 div').hasClass('circle')) return true;
             return false;
 
-        case col_7:
-            if ($('#row-1-col-7').child().hasClass('circle')) return true;
+        case 'row-1-col-7':
+            if ($('#row-1-col-7 div').hasClass('circle')) return true;
             return false;
     
         default:
@@ -100,41 +100,41 @@ function check_top_empty(space) {
 }
 
 /* Place chip */
-function place_chip(column) {
-    switch (column.text()) {
-        case 'col-1':
-            $('#row-1-col-1').child().removeClass('circle');
-            $('#row-1-col-1').child().addClass('circle-red');
+function place_chip(space_id) {
+    switch (space_id) {
+        case 'row-1-col-1':
+            $('#row-1-col-1 div').removeClass('circle');
+            $('#row-1-col-1 div').addClass('circle-red');
             break;
     
-        case 'col-2':
-            $('#row-1-col-2').child().removeClass('circle');
-            $('#row-1-col-2').child().addClass('circle-red');
+        case 'row-1-col-2':
+            $('#row-1-col-2 div').removeClass('circle');
+            $('#row-1-col-2 div').addClass('circle-red');
             break;
 
-        case 'col-3':
-            $('#row-1-col-3').child().removeClass('circle');
-            $('#row-1-col-3').child().addClass('circle-red');
+        case 'row-1-col-3':
+            $('#row-1-col-3 div').removeClass('circle');
+            $('#row-1-col-3 div').addClass('circle-red');
             break;
 
-        case 'col-4':
-            $('#row-1-col-4').child().removeClass('circle');
-            $('#row-1-col-4').child().addClass('circle-red');
+        case 'row-1-col-4':
+            $('#row-1-col-4 div').removeClass('circle');
+            $('#row-1-col-4 div').addClass('circle-red');
             break;
 
-        case 'col-5':
-            $('#row-1-col-5').child().removeClass('circle');
-            $('#row-1-col-5').child().addClass('circle-red');
+        case 'row-1-col-5':
+            $('#row-1-col-5 div').removeClass('circle');
+            $('#row-1-col-5 div').addClass('circle-red');
             break;
 
-        case 'col-6':
-            $('#row-1-col-6').child().removeClass('circle');
-            $('#row-1-col-6').child().addClass('circle-red');
+        case 'row-1-col-6':
+            $('#row-1-col-6 div').removeClass('circle');
+            $('#row-1-col-6 div').addClass('circle-red');
             break;
 
-        case 'col-7':
-            $('#row-1-col-7').child().removeClass('circle');
-            $('#row-1-col-7').child().addClass('circle-red');
+        case 'row-1-col-7':
+            $('#row-1-col-7 div').removeClass('circle');
+            $('#row-1-col-7 div').addClass('circle-red');
             break;
 
         default:
@@ -152,11 +152,9 @@ function select_column() {
     change_column_colour();
     columns.forEach(column => {
         column.click(function() {
-            var top_space = column[0];
-            alert(top_space);
-            if (check_top_empty(top_space)) {
-                alert('worked');
-                place_chip(column);
+            var top_space_id = column[0].parentElement.id;
+            if (check_top_empty(top_space_id)) {
+                place_chip(top_space_id);
             } else {
                 alert("didn't work");
             }
