@@ -103,38 +103,42 @@ function check_top_empty(space_id) {
 function place_chip(space_id) {
     switch (space_id) {
         case 'row-1-col-1':
-            $('#row-1-col-1 div').removeClass('circle');
-            $('#row-1-col-1 div').addClass('circle-red');
+            $('#row-1-col-1 .chip-placed').addClass('circle-red');
+            $('#row-1-col-1 .chip-placed').addClass('fadeIn');
+            /*
+            setTimeout(function() {
+                $('#row-1-col-1 div').removeClass('circle');
+            }, 2000);*/
             break;
     
         case 'row-1-col-2':
-            $('#row-1-col-2 div').removeClass('circle');
-            $('#row-1-col-2 div').addClass('circle-red');
+            $('#row-1-col-2 .chip-placed').addClass('circle-red');
+            $('#row-1-col-2 .chip-placed').addClass('fadeIn');
             break;
 
         case 'row-1-col-3':
-            $('#row-1-col-3 div').removeClass('circle');
-            $('#row-1-col-3 div').addClass('circle-red');
+            $('#row-1-col-3 .chip-placed').addClass('circle-red');
+            $('#row-1-col-3 .chip-placed').addClass('fadeIn');
             break;
 
         case 'row-1-col-4':
-            $('#row-1-col-4 div').removeClass('circle');
-            $('#row-1-col-4 div').addClass('circle-red');
+            $('#row-1-col-4 .chip-placed').addClass('circle-red');
+            $('#row-1-col-4 .chip-placed').addClass('fadeIn');
             break;
 
         case 'row-1-col-5':
-            $('#row-1-col-5 div').removeClass('circle');
-            $('#row-1-col-5 div').addClass('circle-red');
+            $('#row-1-col-5 .chip-placed').addClass('circle-red');
+            $('#row-1-col-5 .chip-placed').addClass('fadeIn');
             break;
 
         case 'row-1-col-6':
-            $('#row-1-col-6 div').removeClass('circle');
-            $('#row-1-col-6 div').addClass('circle-red');
+            $('#row-1-col-6 .chip-placed').addClass('circle-red');
+            $('#row-1-col-6 .chip-placed').addClass('fadeIn');
             break;
 
         case 'row-1-col-7':
-            $('#row-1-col-7 div').removeClass('circle');
-            $('#row-1-col-7 div').addClass('circle-red');
+            $('#row-1-col-7 .chip-placed').addClass('circle-red');
+            $('#row-1-col-7 .chip-placed').addClass('fadeIn');
             break;
 
         default:
