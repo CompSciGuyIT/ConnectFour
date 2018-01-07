@@ -1,3 +1,7 @@
+h3, h2 {
+    text-align: center;
+}
+
 #top-area {
     text-align: center;
     height: 250px;
@@ -75,6 +79,35 @@ td {
      -ms-animation: fadeout 2s; /* Internet Explorer */
       -o-animation: fadeout 2s; /* Opera < 12.1 */
          animation: fadeout 2s;
+}
+
+#play-area {
+    width: 100%;
+}
+
+#player_1_stats {
+    float: left;
+    color: blue;
+    width: 15%;
+}
+
+#player_1_name {
+
+}
+
+#playboard {
+    float: left;
+    width: 70%;
+}
+
+#player_2_stats {
+    float: left;
+    color: red;
+    width: 15%;
+}
+
+#player_1_name {
+
 }
 
 /************/

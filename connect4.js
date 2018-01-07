@@ -15,12 +15,14 @@ var is_won = false;
 
 var player_1 = {
     name: '',
-    color: 'blue'
+    color: 'blue',
+    score: ''
 }
 
 var player_2 = {
     name: '',
-    color: 'red'
+    color: 'red',
+    score: ''
 }
 
 /* Prompt player's name */
@@ -32,13 +34,17 @@ function prompt_player_name(player) {
     }
 }
 
+/* Reset game data */
+function reset_game_data() {
+    player_1.name, player_2.name, player_1.score, player_2.score = '';
+}
+
 /* Clear play area and player data*/
 function clear_play_area() {
     columns.forEach(column => {
         column.removeClass('circle-red');
         column.removeClass('circle-blue');
         column.addClass('circle');
-        player_1.name, player_2.name = '';
     });
 }
 
@@ -219,6 +225,7 @@ function player_turn() {
 /******************************************* */
 $('#btn').click(function() {
     if ($('#btn').text() === "Let's get started!") {
+        reset_game_data();
         begin_game();
         while (!(is_won)) {      // While game has not been won
 

@@ -22,62 +22,66 @@
             <button id="btn" class="btn btn-success btn-block">Let's get started!</button>
         </div>
         <div id="play-area">
-            <table align="center">
-                <tr>
-                    <td><div class="circle row-1 col-1"><div id="row-1-col-1"></div></div></td>
-                    <td><div class="circle row-1 col-2"><div id="row-1-col-2"></div></div></td>
-                    <td><div class="circle row-1 col-3"><div id="row-1-col-3"></div></div></td>
-                    <td><div class="circle row-1 col-4"><div id="row-1-col-4"></div></div></td>
-                    <td><div class="circle row-1 col-5"><div id="row-1-col-5"></div></div></td>
-                    <td><div class="circle row-1 col-6"><div id="row-1-col-6"></div></div></td>
-                    <td><div class="circle row-1 col-7"><div id="row-1-col-7"></div></div></td>
-                </tr>
-                <tr>
-                    <td><div class="circle row-2 col-1"><div id="row-2-col-1"></div></div></td>
-                    <td><div class="circle row-2 col-2"><div id="row-2-col-2"></div></div></td>
-                    <td><div class="circle row-2 col-3"><div id="row-2-col-3"></div></div></td>
-                    <td><div class="circle row-2 col-4"><div id="row-2-col-4"></div></div></td>
-                    <td><div class="circle row-2 col-5"><div id="row-2-col-5"></div></div></td>
-                    <td><div class="circle row-2 col-6"><div id="row-2-col-6"></div></div></td>
-                    <td><div class="circle row-2 col-7"><div id="row-2-col-7"></div></div></td>
-                </tr>
-                <tr>
-                    <td><div class="circle row-3 col-1"><div id="row-3-col-1"></div></div></td>
-                    <td><div class="circle row-3 col-2"><div id="row-3-col-2"></div></div></td>
-                    <td><div class="circle row-3 col-3"><div id="row-3-col-3"></div></div></td>
-                    <td><div class="circle row-3 col-4"><div id="row-3-col-4"></div></div></td>
-                    <td><div class="circle row-3 col-5"><div id="row-3-col-5"></div></div></td>
-                    <td><div class="circle row-3 col-6"><div id="row-3-col-6"></div></div></td>
-                    <td><div class="circle row-3 col-7"><div id="row-3-col-7"></div></div></td>
-                </tr>
-                <tr>
-                    <td><div class="circle row-4 col-1"><div id="row-4-col-1"></div></div></td>
-                    <td><div class="circle row-4 col-2"><div id="row-4-col-2"></div></div></td>
-                    <td><div class="circle row-4 col-3"><div id="row-4-col-3"></div></div></td>
-                    <td><div class="circle row-4 col-4"><div id="row-4-col-4"></div></div></td>
-                    <td><div class="circle row-4 col-5"><div id="row-4-col-5"></div></div></td>
-                    <td><div class="circle row-4 col-6"><div id="row-4-col-6"></div></div></td>
-                    <td><div class="circle row-4 col-7"><div id="row-4-col-7"></div></div></td>
-                </tr>
-                <tr>
-                    <td><div class="circle row-5 col-1"><div id="row-5-col-1"></div></div></td>
-                    <td><div class="circle row-5 col-2"><div id="row-5-col-2"></div></div></td>
-                    <td><div class="circle row-5 col-3"><div id="row-5-col-3"></div></div></td>
-                    <td><div class="circle row-5 col-4"><div id="row-5-col-4"></div></div></td>
-                    <td><div class="circle row-5 col-5"><div id="row-5-col-5"></div></div></td>
-                    <td><div class="circle row-5 col-6"><div id="row-5-col-6"></div></div></td>
-                    <td><div class="circle row-5 col-7"><div id="row-5-col-7"></div></div></td>
-                </tr>
-                <tr>
-                    <td><div class="circle row-6 col-1"><div id="row-6-col-1"></div></div></td>
-                    <td><div class="circle row-6 col-2"><div id="row-6-col-2"></div></div></td>
-                    <td><div class="circle row-6 col-3"><div id="row-6-col-3"></div></div></td>
-                    <td><div class="circle row-6 col-4"><div id="row-6-col-4"></div></div></td>
-                    <td><div class="circle row-6 col-5"><div id="row-6-col-5"></div></div></td>
-                    <td><div class="circle row-6 col-6"><div id="row-6-col-6"></div></div></td>
-                    <td><div class="circle row-6 col-7"><div id="row-6-col-7"></div></div></td>
-                </tr>
-            </table>
+            <div id="player_1_stats"><h3 id="player_1_name"></h3><div><h2 id="player_1_score"></h2></div></div>
+            <div id="playboard">
+                <table align="center">
+                    <tr>
+                        <td><div class="circle row-1 col-1"><div id="row-1-col-1"></div></div></td>
+                        <td><div class="circle row-1 col-2"><div id="row-1-col-2"></div></div></td>
+                        <td><div class="circle row-1 col-3"><div id="row-1-col-3"></div></div></td>
+                        <td><div class="circle row-1 col-4"><div id="row-1-col-4"></div></div></td>
+                        <td><div class="circle row-1 col-5"><div id="row-1-col-5"></div></div></td>
+                        <td><div class="circle row-1 col-6"><div id="row-1-col-6"></div></div></td>
+                        <td><div class="circle row-1 col-7"><div id="row-1-col-7"></div></div></td>
+                    </tr>
+                    <tr>
+                        <td><div class="circle row-2 col-1"><div id="row-2-col-1"></div></div></td>
+                        <td><div class="circle row-2 col-2"><div id="row-2-col-2"></div></div></td>
+                        <td><div class="circle row-2 col-3"><div id="row-2-col-3"></div></div></td>
+                        <td><div class="circle row-2 col-4"><div id="row-2-col-4"></div></div></td>
+                        <td><div class="circle row-2 col-5"><div id="row-2-col-5"></div></div></td>
+                        <td><div class="circle row-2 col-6"><div id="row-2-col-6"></div></div></td>
+                        <td><div class="circle row-2 col-7"><div id="row-2-col-7"></div></div></td>
+                    </tr>
+                    <tr>
+                        <td><div class="circle row-3 col-1"><div id="row-3-col-1"></div></div></td>
+                        <td><div class="circle row-3 col-2"><div id="row-3-col-2"></div></div></td>
+                        <td><div class="circle row-3 col-3"><div id="row-3-col-3"></div></div></td>
+                        <td><div class="circle row-3 col-4"><div id="row-3-col-4"></div></div></td>
+                        <td><div class="circle row-3 col-5"><div id="row-3-col-5"></div></div></td>
+                        <td><div class="circle row-3 col-6"><div id="row-3-col-6"></div></div></td>
+                        <td><div class="circle row-3 col-7"><div id="row-3-col-7"></div></div></td>
+                    </tr>
+                    <tr>
+                        <td><div class="circle row-4 col-1"><div id="row-4-col-1"></div></div></td>
+                        <td><div class="circle row-4 col-2"><div id="row-4-col-2"></div></div></td>
+                        <td><div class="circle row-4 col-3"><div id="row-4-col-3"></div></div></td>
+                        <td><div class="circle row-4 col-4"><div id="row-4-col-4"></div></div></td>
+                        <td><div class="circle row-4 col-5"><div id="row-4-col-5"></div></div></td>
+                        <td><div class="circle row-4 col-6"><div id="row-4-col-6"></div></div></td>
+                        <td><div class="circle row-4 col-7"><div id="row-4-col-7"></div></div></td>
+                    </tr>
+                    <tr>
+                        <td><div class="circle row-5 col-1"><div id="row-5-col-1"></div></div></td>
+                        <td><div class="circle row-5 col-2"><div id="row-5-col-2"></div></div></td>
+                        <td><div class="circle row-5 col-3"><div id="row-5-col-3"></div></div></td>
+                        <td><div class="circle row-5 col-4"><div id="row-5-col-4"></div></div></td>
+                        <td><div class="circle row-5 col-5"><div id="row-5-col-5"></div></div></td>
+                        <td><div class="circle row-5 col-6"><div id="row-5-col-6"></div></div></td>
+                        <td><div class="circle row-5 col-7"><div id="row-5-col-7"></div></div></td>
+                    </tr>
+                    <tr>
+                        <td><div class="circle row-6 col-1"><div id="row-6-col-1"></div></div></td>
+                        <td><div class="circle row-6 col-2"><div id="row-6-col-2"></div></div></td>
+                        <td><div class="circle row-6 col-3"><div id="row-6-col-3"></div></div></td>
+                        <td><div class="circle row-6 col-4"><div id="row-6-col-4"></div></div></td>
+                        <td><div class="circle row-6 col-5"><div id="row-6-col-5"></div></div></td>
+                        <td><div class="circle row-6 col-6"><div id="row-6-col-6"></div></div></td>
+                        <td><div class="circle row-6 col-7"><div id="row-6-col-7"></div></div></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="player_2_stats"><h3 id="player_2_name"></h3><div><h2 id="player_2_score"></h2></div></div>
         </div>
     </div>
     <script src="connect4.js"></script>   
