@@ -324,6 +324,175 @@ function check_for_space(column) {
     return 'FULL';
 }
 
+/* Check for a win! */
+function check_for_win(placed_token) {
+    alert('check_for_win');
+    // var check_functions = [
+    //     check_vertical,
+    //     check_horizontal,
+    //     check_incline_diagonal,
+    //     check_decline_diagonal
+    // ];
+    // var has_won = false;
+
+    // check_functions.forEach(element => {
+    //     has_won = element(placed_token);
+    //     if (has_won) return has_won;
+    // });
+
+    has_won = check_vertical(placed_token);
+    if (has_won) return has_won;
+    
+    has_won = check_horizontal(placed_token);
+    if (has_won) return has_won;
+    
+    has_won = check_incline_diagonal(placed_token);
+    if (has_won) return has_won;
+    
+    has_won = check_decline_diagonal(placed_token);
+    
+    return has_won;
+}
+
+/* Check for win functions */
+// Check vertical tokens
+function check_vertical(placed_token) {
+    alert('check_vertical');
+    var tokens = 1;
+    var token_row_char = placed_token[5];
+    var token_row_int = parseInt(token_row_char);
+    var check_row = token_row_int + 1;
+
+    while (check_row < 6) {
+        var check_token = '#row-' + check_row + '-col-' + placed_token[11];
+        if (($(placed_token).is('.circle-red') && $(check_token).is('.circle-red')) || ($(placed_token).is('.circle-blue') && $(check_token).is('.circle-blue'))) {
+            tokens++;
+        } else { break; }
+        check_row++;
+    }
+
+    check_row = token_row_int - 1;
+
+    while (check_row > 0) {
+        var check_token = '#row-' + check_row + '-col-' + placed_token[11];
+        if (($(placed_token).is('.circle-red') && $(check_token).is('.circle-red')) || ($(placed_token).is('.circle-blue') && $(check_token).is('.circle-blue'))) {
+            tokens++;
+        } else { break; }
+        check_row--;
+    }
+
+    if (tokens > 3) return true;
+    
+    return false;
+}
+
+// Check horizontal tokens
+function check_horizontal(placed_token) {
+    alert('check_horizontal');
+    var tokens = 1;
+    var token_column_char = placed_token[11];
+    var token_column_int = parseInt(token_column_char);
+    var check_column = token_column_int + 1;
+
+    while (check_column < 7) {
+        var check_token = '#row-' + placed_token[5] + '-col-' + check_column;
+        if (($(placed_token).is('.circle-red') && $(check_token).is('.circle-red')) || ($(placed_token).is('.circle-blue') && $(check_token).is('.circle-blue'))) {
+            tokens++;
+        } else { break; }
+        check_column++;
+    }
+
+    check_column = token_column_int - 1;
+
+    while (check_column > 0) {
+        var check_token = '#row-' + placed_token[5] + '-col-' + check_column;
+        if (($(placed_token).is('.circle-red') && $(check_token).is('.circle-red')) || ($(placed_token).is('.circle-blue') && $(check_token).is('.circle-blue'))) {
+            tokens++;
+        } else { break; }
+        check_column--;
+    }
+
+    if (tokens > 3) return true;
+    
+    return false;
+}
+
+// Check incline diagonal tokens
+function check_incline_diagonal(placed_token) {
+    alert('check_incline_diagonal');
+    var tokens = 1;
+
+    var token_column_char = placed_token[11];
+    var token_row_char = placed_token[5];
+
+    var token_column_int = parseInt(token_column_char);
+    var token_row_int = parseInt(token_row_char);
+
+    var check_column = token_column_int + 1;
+    var check_row = token_row_int - 1;
+
+    while (check_row > 0 && check_column < 7) {
+        if (($(placed_token).is('.circle-red') && $(check_token).is('.circle-red')) || ($(placed_token).is('.circle-blue') && $(check_token).is('.circle-blue'))) {
+            tokens++;
+        } else { break; }
+        check_column++;
+        check_row--;
+    }
+
+    var check_column = token_column_int - 1;
+    var check_row = token_row_int + 1;
+
+    while (check_row < 6 && check_column > 0) {
+        if (($(placed_token).is('.circle-red') && $(check_token).is('.circle-red')) || ($(placed_token).is('.circle-blue') && $(check_token).is('.circle-blue'))) {
+            tokens++;
+        } else { break; }
+        check_column++;
+        check_row--;
+    }
+
+    if (tokens > 3) return true;
+
+    return false;
+}
+
+// Check decline diagonal tokens
+function check_decline_diagonal(placed_token) {
+    alert('check_decline_diagonal');
+    var tokens = 1;
+
+    var token_column_char = placed_token[11];
+    var token_row_char = placed_token[5];
+
+    var token_column_int = parseInt(token_column_char);
+    var token_row_int = parseInt(token_row_char);
+
+    var check_column = token_column_int + 1;
+    var check_row = token_row_int + 1;
+
+    while (check_row < 6 && check_column < 7) {
+        if (($(placed_token).is('.circle-red') && $(check_token).is('.circle-red')) || ($(placed_token).is('.circle-blue') && $(check_token).is('.circle-blue'))) {
+            tokens++;
+        } else { break; }
+        check_column++;
+        check_row++;
+    }
+
+    var check_column = token_column_int - 1;
+    var check_row = token_row_int - 1;
+
+    while (check_row > 0 && check_column > 0) {
+        if (($(placed_token).is('.circle-red') && $(check_token).is('.circle-red')) || ($(placed_token).is('.circle-blue') && $(check_token).is('.circle-blue'))) {
+            tokens++;
+        } else { break; }
+        check_column--;
+        check_row--;
+    }
+
+    if (tokens > 3) return true;
+    
+    return false;
+}
+
 /******************************************* */
 /*                 Play Game                 */
 /******************************************* */
@@ -358,7 +527,7 @@ $('.col-1').click(function() {
         column_full('.col-1');
     } else {
         drop_chip(space);
-        check_for_win(space);
+        is_won = check_for_win(space);
     }
 })
 
