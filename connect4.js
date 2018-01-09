@@ -68,25 +68,15 @@ function unchange_column_colour() {
 }
 
 /* Column is full animation */
+// Isn't working - may remove if issue cannot be resolved
+// Not a necessary feature 
 function column_full(column) {
-    setTimeout(() => {
-        $(column).parent().css('background', 'rgb(255, 128, 0)');
-    }, 250);
-    setTimeout(() => {
-        $(column).parent().css('background', 'grey');
-    }, 250);
-    setTimeout(() => {
-        $(column).parent().css('background', 'rgb(255, 128, 0)');
-    }, 250);
-    setTimeout(() => {
-        $(column).parent().css('background', 'grey');
-    }, 250);
-    setTimeout(() => {
-        $(column).parent().css('background', 'rgb(255, 128, 0)');
-    }, 250);
-    setTimeout(() => {
-        $(column).parent().css('background', 'grey');
-    }, 250);
+    $(column).parent().animate({background: 'rgb(255, 128, 0)'}, 500)
+    .animate({background: 'grey'}, 500)
+    .animate({background: 'rgb(255, 128, 0)'}, 500)
+    .animate({background: 'grey'}, 500)
+    .animate({background: 'rgb(255, 128, 0)'}, 500)
+    .animate({background: 'grey'}, 500);
 }
 
 /* Drop chip */
