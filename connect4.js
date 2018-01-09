@@ -58,23 +58,6 @@ function clear_play_area() {
     });
 }
 
-/* Change column colour on hover */
-function change_column_colour() {
-    columns.forEach(column => {
-        column.mouseenter(function() {
-            if (player_1_turn) {
-                column.parent().css('background', '#9999FF');
-            } else {
-                column.parent().css('background', '#FF9999');
-            }
-        })
-        
-        column.mouseleave(function() {
-            column.parent().css('background', 'grey');
-        })
-    });
-}
-
 /* Column mouse-over grey */
 function unchange_column_colour() {
     columns.forEach(column => {
@@ -101,166 +84,21 @@ function column_full(column) {
     setTimeout(() => {
         $(column).parent().css('background', 'rgb(255, 128, 0)');
     }, 250);
-}
-
-/* Check if top row in column is empty */
-function check_space(space_id) {
-    switch (space_id) {
-        case 'row-1-col-1':
-            if (($('#row-1-col-1').is('circle-red')) || ($('#row-1-col-1').is('circle-blue'))) {
-                return true;
-            } else {
-                return false;
-            }
-    
-        case 'row-1-col-2':
-            if (($('#row-1-col-2').hasClass('circle-red')) || ($('#row-1-col-2').hasClass('circle-blue'))) {
-                return true;
-            } else {
-                return false;
-            }
-
-        case 'row-1-col-3':
-            if (($('#row-1-col-3').hasClass('circle-red')) || ($('#row-1-col-3').hasClass('circle-blue'))) {
-                return true;
-            } else {
-                return false;
-            }
-
-        case 'row-1-col-4':
-            if (($('#row-1-col-4').hasClass('circle-red')) || ($('#row-1-col-4').hasClass('circle-blue'))) {
-                return true;
-            } else {
-                return false;
-            }
-
-        case 'row-1-col-5':
-            if (($('#row-1-col-5').hasClass('circle-red')) || ($('#row-1-col-5').hasClass('circle-blue'))) {
-                return true;
-            } else {
-                return false;
-            }
-
-        case 'row-1-col-6':
-            if (($('#row-1-col-6').hasClass('circle-red')) || ($('#row-1-col-6').hasClass('circle-blue'))) {
-                return true;
-            } else {
-                return false;
-            }
-
-        case 'row-1-col-7':
-            if (($('#row-1-col-7').hasClass('circle-red')) || ($('#row-1-col-7').hasClass('circle-blue'))) {
-                return true;
-            } else {
-                return false;
-            }
-    }
-}
-
-/* Place chip */
-function place_chip(space_id) {
-    switch (space_id) {
-        case 'row-1-col-1':
-            if (player_1_turn) {
-                $('#row-1-col-1').addClass('circle-blue');
-                $('#row-1-col-1').addClass('fadeIn');          
-            } else {
-                $('#row-1-col-1').addClass('circle-red');
-                $('#row-1-col-1').addClass('fadeIn');             
-            }
-
-            player_1_turn = !player_1_turn;   
-            break;
-    
-        case 'row-1-col-2':
-            if (player_1_turn) {
-                $('#row-1-col-1').addClass('circle-blue');
-                $('#row-1-col-1').addClass('fadeIn');             
-            } else {
-                $('#row-1-col-1').addClass('circle-red');
-                $('#row-1-col-1').addClass('fadeIn');         
-            }
-
-            player_1_turn = !player_1_turn;       
-            break;
-
-        case 'row-1-col-3':
-            if (player_1_turn) {
-                $('#row-1-col-1').addClass('circle-blue');
-                $('#row-1-col-1').addClass('fadeIn');           
-            } else {
-                $('#row-1-col-1').addClass('circle-red');
-                $('#row-1-col-1').addClass('fadeIn');          
-            }
-
-            player_1_turn = !player_1_turn;      
-            break;
-
-        case 'row-1-col-4':
-            if (player_1_turn) {
-                $('#row-1-col-1').addClass('circle-blue');
-                $('#row-1-col-1').addClass('fadeIn');          
-            } else {
-                $('#row-1-col-1').addClass('circle-red');
-                $('#row-1-col-1').addClass('fadeIn');           
-            }
-
-            player_1_turn = !player_1_turn;     
-            break;
-
-        case 'row-1-col-5':
-            if (player_1_turn) {
-                $('#row-1-col-1').addClass('circle-blue');
-                $('#row-1-col-1').addClass('fadeIn');             
-            } else {
-                $('#row-1-col-1').addClass('circle-red');
-                $('#row-1-col-1').addClass('fadeIn');           
-            }
-
-            player_1_turn = !player_1_turn;     
-            break;
-
-        case 'row-1-col-6':
-            if (player_1_turn) {
-                $('#row-1-col-1').addClass('circle-blue');
-                $('#row-1-col-1').addClass('fadeIn');          
-            } else {
-                $('#row-1-col-1').addClass('circle-red');
-                $('#row-1-col-1').addClass('fadeIn');          
-            }
-
-            player_1_turn = !player_1_turn;      
-            break;
-
-        case 'row-1-col-7':
-            if (player_1_turn) {
-                $('#row-1-col-1').addClass('circle-blue');
-                $('#row-1-col-1').addClass('fadeIn');          
-            } else {
-                $('#row-1-col-1').addClass('circle-red');
-                $('#row-1-col-1').addClass('fadeIn');         
-            }
-
-            player_1_turn = !player_1_turn;       
-            break;
-    }
+    setTimeout(() => {
+        $(column).parent().css('background', 'grey');
+    }, 250);
 }
 
 /* Drop chip */
 function drop_chip(space) {
     if (player_1_turn) {
-        $(space).addClass('circle-blue');
-        $(space).addClass('fadeIn');          
+        $(space).parent().addClass('circle-blue');
+        $(space).parent().addClass('fadeIn');        
     } else {
-        $(space).addClass('circle-red');
-        $(space).addClass('fadeIn');         
+        $(space).parent().addClass('circle-red');
+        $(space).parent().addClass('fadeIn');         
     }
-}
-
-/* Player selects column to drop chip */
-function select_column() {
-    change_column_colour();
-    drop_chip();
+    player_1_turn = !player_1_turn;
 }
 
 /* Begin Game */
@@ -317,7 +155,7 @@ function another_round() {
 function check_for_space(column) {
     for (var row = 6; row > 0; row--) {
         var space = '#row-' + row + column;
-        if (!($(space).is('circle-red')) && !($(space).is('circle-blue'))) {
+        if (!($(space).parent().is('.circle-red')) && !($(space).parent().is('.circle-blue'))) {
             return space;
         }
     }
@@ -326,20 +164,6 @@ function check_for_space(column) {
 
 /* Check for a win! */
 function check_for_win(placed_token) {
-    alert('check_for_win');
-    // var check_functions = [
-    //     check_vertical,
-    //     check_horizontal,
-    //     check_incline_diagonal,
-    //     check_decline_diagonal
-    // ];
-    // var has_won = false;
-
-    // check_functions.forEach(element => {
-    //     has_won = element(placed_token);
-    //     if (has_won) return has_won;
-    // });
-
     has_won = check_vertical(placed_token);
     if (has_won) return has_won;
     
@@ -357,7 +181,6 @@ function check_for_win(placed_token) {
 /* Check for win functions */
 // Check vertical tokens
 function check_vertical(placed_token) {
-    alert('check_vertical');
     var tokens = 1;
     var token_row_char = placed_token[5];
     var token_row_int = parseInt(token_row_char);
@@ -388,7 +211,6 @@ function check_vertical(placed_token) {
 
 // Check horizontal tokens
 function check_horizontal(placed_token) {
-    alert('check_horizontal');
     var tokens = 1;
     var token_column_char = placed_token[11];
     var token_column_int = parseInt(token_column_char);
@@ -419,7 +241,6 @@ function check_horizontal(placed_token) {
 
 // Check incline diagonal tokens
 function check_incline_diagonal(placed_token) {
-    alert('check_incline_diagonal');
     var tokens = 1;
 
     var token_column_char = placed_token[11];
@@ -432,6 +253,7 @@ function check_incline_diagonal(placed_token) {
     var check_row = token_row_int - 1;
 
     while (check_row > 0 && check_column < 7) {
+        var check_token = '#row-' + check_row + '-col-' + check_column;
         if (($(placed_token).is('.circle-red') && $(check_token).is('.circle-red')) || ($(placed_token).is('.circle-blue') && $(check_token).is('.circle-blue'))) {
             tokens++;
         } else { break; }
@@ -443,13 +265,13 @@ function check_incline_diagonal(placed_token) {
     var check_row = token_row_int + 1;
 
     while (check_row < 6 && check_column > 0) {
+        var check_token = '#row-' + check_row + '-col-' + check_column;
         if (($(placed_token).is('.circle-red') && $(check_token).is('.circle-red')) || ($(placed_token).is('.circle-blue') && $(check_token).is('.circle-blue'))) {
             tokens++;
         } else { break; }
         check_column++;
         check_row--;
     }
-
     if (tokens > 3) return true;
 
     return false;
@@ -457,7 +279,6 @@ function check_incline_diagonal(placed_token) {
 
 // Check decline diagonal tokens
 function check_decline_diagonal(placed_token) {
-    alert('check_decline_diagonal');
     var tokens = 1;
 
     var token_column_char = placed_token[11];
@@ -470,6 +291,7 @@ function check_decline_diagonal(placed_token) {
     var check_row = token_row_int + 1;
 
     while (check_row < 6 && check_column < 7) {
+        var check_token = '#row-' + check_row + '-col-' + check_column;
         if (($(placed_token).is('.circle-red') && $(check_token).is('.circle-red')) || ($(placed_token).is('.circle-blue') && $(check_token).is('.circle-blue'))) {
             tokens++;
         } else { break; }
@@ -481,6 +303,7 @@ function check_decline_diagonal(placed_token) {
     var check_row = token_row_int - 1;
 
     while (check_row > 0 && check_column > 0) {
+        var check_token = '#row-' + check_row + '-col-' + check_column;
         if (($(placed_token).is('.circle-red') && $(check_token).is('.circle-red')) || ($(placed_token).is('.circle-blue') && $(check_token).is('.circle-blue'))) {
             tokens++;
         } else { break; }
@@ -544,6 +367,16 @@ $('.col-2').mouseleave(function() {
     $('.col-2').parent().css('background', 'grey');
 })
 
+$('.col-2').click(function() {
+    var space = check_for_space('-col-2');
+    if (space === 'FULL') {
+        column_full('.col-2');
+    } else {
+        drop_chip(space);
+        is_won = check_for_win(space);
+    }
+})
+
 // Column 3
 $('.col-3').mouseenter(function() {
     if (player_1_turn && game_on) {
@@ -555,6 +388,16 @@ $('.col-3').mouseenter(function() {
 
 $('.col-3').mouseleave(function() {
     $('.col-3').parent().css('background', 'grey');
+})
+
+$('.col-3').click(function() {
+    var space = check_for_space('-col-3');
+    if (space === 'FULL') {
+        column_full('.col-3');
+    } else {
+        drop_chip(space);
+        is_won = check_for_win(space);
+    }
 })
 
 // Column 4
@@ -570,6 +413,16 @@ $('.col-4').mouseleave(function() {
     $('.col-4').parent().css('background', 'grey');
 })
 
+$('.col-4').click(function() {
+    var space = check_for_space('-col-4');
+    if (space === 'FULL') {
+        column_full('.col-4');
+    } else {
+        drop_chip(space);
+        is_won = check_for_win(space);
+    }
+})
+
 // Column 5
 $('.col-5').mouseenter(function() {
     if (player_1_turn && game_on) {
@@ -581,6 +434,16 @@ $('.col-5').mouseenter(function() {
 
 $('.col-5').mouseleave(function() {
     $('.col-5').parent().css('background', 'grey');
+})
+
+$('.col-5').click(function() {
+    var space = check_for_space('-col-5');
+    if (space === 'FULL') {
+        column_full('.col-5');
+    } else {
+        drop_chip(space);
+        is_won = check_for_win(space);
+    }
 })
 
 // Column 6
@@ -596,6 +459,16 @@ $('.col-6').mouseleave(function() {
     $('.col-6').parent().css('background', 'grey');
 })
 
+$('.col-6').click(function() {
+    var space = check_for_space('-col-6');
+    if (space === 'FULL') {
+        column_full('.col-6');
+    } else {
+        drop_chip(space);
+        is_won = check_for_win(space);
+    }
+})
+
 // Column 7
 $('.col-7').mouseenter(function() {
     if (player_1_turn && game_on) {
@@ -609,75 +482,12 @@ $('.col-7').mouseleave(function() {
     $('.col-7').parent().css('background', 'grey');
 })
 
-
-// if (!game_on) {
-//     unchange_column_colour();
-// } else {
-//     change_column_colour();
-//     player_turn();
-// }
-
-// do {
-//     do {
-//         if (player_1_turn) {
-//             do {
-//                 player_turn();
-//             } while (condition);        
-//         } else {
-//             do {
-//                 player_turn();
-//             } while (condition);
-//         }        
-//     } while (!(is_won));
-
-//     play = another_round();
-// } while (play === true);
-
-// do {
-//     do {
-//         player_turn();
-//         // if (player_1_turn) {
-//         //     do {
-//         //         player_turn();     
-//         //     } while (player_1_turn);        
-//         // } else {
-//         //     do {
-//         //         player_turn();     
-//         //     } while (!player_1_turn);
-//         // }  
-        
-//         // placeholder
-//         var win = prompt('win game y/n');
-//         if (win === 'y') {
-//             is_won = true;
-//         }
-
-//     } while (!(is_won));
-
-//     play = another_round();
-// } while (play === true);
-
-
-// do {
-
-//     play = another_round();
-// } while (play === true);
-
-// while (!(is_won)) {      // While game has not been won
-
-//     // The next 4 lines are needed to keep the browserr from crashing
-    // var win = prompt('win game y/n');
-    // if (win === 'y') {
-    //     is_won = true;
-    // }
-
-//     player_turn(); 
-// } 
-
-// while (1) {
-//     reset_game_data();
-//     do {
-
-//         play = another_round();
-//     } while (play === true);
-// }
+$('.col-7').click(function() {
+    var space = check_for_space('-col-7');
+    if (space === 'FULL') {
+        column_full('.col-7');
+    } else {
+        drop_chip(space);
+        is_won = check_for_win(space);
+    }
+})
