@@ -345,12 +345,19 @@ $('.col-1').mouseleave(function() {
 })
 
 $('.col-1').click(function() {
-    var space = check_for_space('-col-1');
-    if (space === 'FULL') {
-        column_full('.col-1');
-    } else {
-        drop_chip(space);
-        is_won = check_for_win(space);
+    if (game_on) {
+        var space = check_for_space('-col-1');
+        if (space === 'FULL') {
+            column_full('.col-1');
+        } else {
+            if (player_1_turn) {
+                $('.col-1').parent().css('background', '#FF9999');
+            } else {
+                $('.col-1').parent().css('background', '#9999FF');
+            }
+            drop_chip(space);
+            is_won = check_for_win(space);
+        }
     }
 })
 
@@ -368,12 +375,19 @@ $('.col-2').mouseleave(function() {
 })
 
 $('.col-2').click(function() {
-    var space = check_for_space('-col-2');
-    if (space === 'FULL') {
-        column_full('.col-2');
-    } else {
-        drop_chip(space);
-        is_won = check_for_win(space);
+    if (game_on) {
+        var space = check_for_space('-col-2');
+        if (space === 'FULL') {
+            column_full('.col-2');
+        } else {
+            if (player_1_turn) {
+                $('.col-2').parent().css('background', '#FF9999');
+            } else {
+                $('.col-2').parent().css('background', '#9999FF');
+            }
+            drop_chip(space);
+            is_won = check_for_win(space);
+        }
     }
 })
 
@@ -391,12 +405,19 @@ $('.col-3').mouseleave(function() {
 })
 
 $('.col-3').click(function() {
-    var space = check_for_space('-col-3');
-    if (space === 'FULL') {
-        column_full('.col-3');
-    } else {
-        drop_chip(space);
-        is_won = check_for_win(space);
+    if (game_on) {
+        var space = check_for_space('-col-3');
+        if (space === 'FULL') {
+            column_full('.col-3');
+        } else {
+            if (player_1_turn) {
+                $('.col-3').parent().css('background', '#FF9999');
+            } else {
+                $('.col-3').parent().css('background', '#9999FF');
+            }
+            drop_chip(space);
+            is_won = check_for_win(space);
+        }
     }
 })
 
@@ -414,12 +435,19 @@ $('.col-4').mouseleave(function() {
 })
 
 $('.col-4').click(function() {
-    var space = check_for_space('-col-4');
-    if (space === 'FULL') {
-        column_full('.col-4');
-    } else {
-        drop_chip(space);
-        is_won = check_for_win(space);
+    if (game_on) {
+        var space = check_for_space('-col-4');
+        if (space === 'FULL') {
+            column_full('.col-4');
+        } else {
+            if (player_1_turn) {
+                $('.col-4').parent().css('background', '#FF9999');
+            } else {
+                $('.col-4').parent().css('background', '#9999FF');
+            }
+            drop_chip(space);
+            is_won = check_for_win(space);
+        }
     }
 })
 
@@ -437,12 +465,19 @@ $('.col-5').mouseleave(function() {
 })
 
 $('.col-5').click(function() {
-    var space = check_for_space('-col-5');
-    if (space === 'FULL') {
-        column_full('.col-5');
-    } else {
-        drop_chip(space);
-        is_won = check_for_win(space);
+    if (game_on) {
+        var space = check_for_space('-col-5');
+        if (space === 'FULL') {
+            column_full('.col-5');
+        } else {
+            if (player_1_turn) {
+                $('.col-5').parent().css('background', '#FF9999');
+            } else {
+                $('.col-5').parent().css('background', '#9999FF');
+            }
+            drop_chip(space);
+            is_won = check_for_win(space);
+        }
     }
 })
 
@@ -460,12 +495,19 @@ $('.col-6').mouseleave(function() {
 })
 
 $('.col-6').click(function() {
-    var space = check_for_space('-col-6');
-    if (space === 'FULL') {
-        column_full('.col-6');
-    } else {
-        drop_chip(space);
-        is_won = check_for_win(space);
+    if (game_on) {
+        var space = check_for_space('-col-6');
+        if (space === 'FULL') {
+            column_full('.col-6');
+        } else {
+            if (player_1_turn) {
+                $('.col-6').parent().css('background', '#FF9999');
+            } else {
+                $('.col-6').parent().css('background', '#9999FF');
+            }
+            drop_chip(space);
+            is_won = check_for_win(space);
+        }
     }
 })
 
@@ -483,11 +525,18 @@ $('.col-7').mouseleave(function() {
 })
 
 $('.col-7').click(function() {
-    var space = check_for_space('-col-7');
-    if (space === 'FULL') {
-        column_full('.col-7');
-    } else {
-        drop_chip(space);
-        is_won = check_for_win(space);
+    if (game_on) {
+        var space = check_for_space('-col-7');
+        if (space === 'FULL') {
+            column_full('.col-7');
+        } else {
+            if (player_1_turn) {
+                $('.col-7').parent().css('background', '#FF9999');
+            } else {
+                $('.col-7').parent().css('background', '#9999FF');
+            }
+            drop_chip(space);
+            is_won = check_for_win(space);
+        }
     }
 })
