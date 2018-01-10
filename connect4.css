@@ -65,6 +65,17 @@ td {
     margin: auto;
 }
 
+.circle-yellow {
+    width: 90px;
+    height: 90px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: 2px solid black;
+    background: yellow;
+    margin: auto;
+}
+
 .fadeIn {
     -webkit-animation: fadein 0.5s; /* Safari, Chrome and Opera > 12.1 */
     -moz-animation: fadein 0.5s; /* Firefox < 16 */
@@ -85,30 +96,6 @@ td {
     width: 100%;
 }
 
-#player_1_stats {
-    float: left;
-    color: blue;
-    width: 15%;
-}
-
-#player_1_name {
-
-}
-
-#playboard {
-    float: left;
-    width: 70%;
-}
-
-#player_2_stats {
-    float: left;
-    color: red;
-    width: 15%;
-}
-
-#player_1_name {
-
-}
 
 /************/
 /* Fade ins */
